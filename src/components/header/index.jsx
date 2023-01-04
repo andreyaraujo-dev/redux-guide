@@ -6,7 +6,7 @@ import Cart from "../cart/index";
 // Styles
 import * as Styles from "./styles";
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser, logoutUser } from '../../redux/user/actions'
+import { login, logout } from '../../redux/user/slice'
 import { selectProductsCount } from '../../redux/cart/cart.selectors';
 
 function Header() {
@@ -20,11 +20,11 @@ function Header() {
   };
 
   const handleLogin = () => {
-    dispatch(loginUser({ name: 'Andrey', email: 'andrey@email.com' }))
+    dispatch(login({ name: 'Andrey', email: 'andrey@email.com' }))
   }
 
   const handleLogout = () => {
-    dispatch(logoutUser())
+    dispatch(logout())
   };
 
   return (
